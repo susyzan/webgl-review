@@ -1,5 +1,5 @@
 /**
- * initialize the scene, the camera and the renderer
+ * Initialize the scene, the camera and the renderer
  */
 function init(){
     //initialize the scene
