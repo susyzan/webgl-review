@@ -2,9 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3c88144-d69f-4937-9588-e1b693e99f2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webgl-review.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CopyShader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/EffectComposer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/MTLLoader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/MaskPass.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/OBJLoader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/OrbitControls.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/RGBShiftShader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/RenderPass.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/ShaderPass.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Tween.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/VignetteShader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/dat.gui.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/perlin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/stats.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/three.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="10" lean-forward="true" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+              <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -74,10 +94,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="802" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="809" />
     <option name="y" value="22" />
-    <option name="width" value="896" />
+    <option name="width" value="871" />
     <option name="height" value="984" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -213,18 +233,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1501502043616</updated>
-      <workItem from="1501502047670" duration="2249000" />
+      <workItem from="1501502047670" duration="2579000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2249000" />
+    <option name="totallyTimeSpent" value="2579000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="984" extended-state="6" />
+    <frame x="809" y="22" width="871" height="984" extended-state="0" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11599512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2291918" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -289,7 +309,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="true" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
           <folding />
         </state>
       </provider>
