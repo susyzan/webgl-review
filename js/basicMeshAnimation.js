@@ -18,8 +18,8 @@ function init(){
     //rotate the plane to have it horizontal, webgl uses radiants instead of angles
     plane.rotation.x = Math.PI/2; //this is the equivalent of 90 degrees
 
-    //add the mesh and the plane to the scene
-    scene.add(box);
+    //add the mesh to the plane as a child and the plane to the scene
+    plane.add(box);
     scene.add(plane);
 
     //initialize the camera
@@ -111,6 +111,17 @@ function update(renderer, scene, camera) {
         scene,
         camera
     );
+
+    //get the plane object by name and add some rotation
+    var plane = scene.getObjectByName('plane-1');
+    plane.rotation.y += 0.001;
+    plane.rotation.z += 0.001;
+
+    //add a scale function to all the objects in the scene with the traverse function
+    //the traverse function applies the callback function to all of the children of the object
+    scene.traverse(function(child){
+        child.scale.x += 0.001;
+    });
 
     //we use the request animation frame function to keep updating about 60 times a second the page and allow animation
     requestAnimationFrame(function(){
