@@ -5,10 +5,14 @@ function init(){
     //initialize the scene
     var scene = new THREE.Scene();
 
+    //set up the fog property to allow the scene to fade off to white
+    //the fog object takes two parameters, color and density of the fog
+    scene.fog = new THREE.FogExp2(0xffffff, 0.2);
+
     //get the box
     var box = getBox( 1, 1, 1);
     //get the p;ane
-    var plane = getPlane(4, 4);
+    var plane = getPlane(20, 20);
 
     //give a name to the plane so we can easily find it
     plane.name = 'plane-1';
@@ -45,6 +49,8 @@ function init(){
     var renderer = new THREE.WebGLRenderer();
     //set the size of the renderer proportional to the window
     renderer.setSize(window.innerWidth, window.innerHeight);
+    //set background color for the scene
+    renderer.setClearColor(0xffffff);
     //append the domElement for the renderer to the HTML
     document.getElementById('webgl').appendChild(renderer.domElement);
     //we call the function that does the renderings
