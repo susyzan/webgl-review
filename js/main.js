@@ -77,6 +77,12 @@ function getBox(width, height, depth) {
     return mesh;
 }
 
+/**
+ * Create the 2d plane by adding geometry and material together, the parameters are the dimensions of the plane geometry
+ * @param width
+ * @param depth
+ * @returns {Raycaster.params.Mesh|*}
+ */
 function getPlane(width, depth){
     var geometry = new THREE.PlaneGeometry(width, depth);
     var material = new THREE.MeshBasicMaterial({
@@ -92,7 +98,8 @@ function getPlane(width, depth){
     return mesh;
 }
 
-init();
+//assign the scene object to a variable so we can see what's inside from the console
+var scene = init();
 
 
 
