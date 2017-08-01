@@ -44,12 +44,10 @@ function init(){
     renderer.setSize(window.innerWidth, window.innerHeight);
     //append the domElement for the renderer to the HTML
     document.getElementById('webgl').appendChild(renderer.domElement);
+    //we call the function that does the renderings
+    update(renderer, scene, camera);
 
-    //call the render method using the scene and the camera
-    renderer.render(
-        scene,
-        camera
-    );
+    return scene;
 
 }
 
@@ -66,7 +64,7 @@ function getBox(width, height, depth) {
     var geometry = new THREE.BoxGeometry(width, height, depth);
     //initiate the material, default is mesh (not affected by the light)
     var material = new THREE.MeshBasicMaterial({
-        color: 0xffffff
+        color: 0xf7786b
     });
     //create the mesh
     var mesh = new THREE.Mesh(
@@ -86,7 +84,7 @@ function getBox(width, height, depth) {
 function getPlane(width, depth){
     var geometry = new THREE.PlaneGeometry(width, depth);
     var material = new THREE.MeshBasicMaterial({
-        color: 0xff0000,
+        color: 0xf7cac9,
         side: THREE.DoubleSide
     });
 
@@ -96,6 +94,25 @@ function getPlane(width, depth){
     );
 
     return mesh;
+}
+
+/**
+ * Call the renderer method and request animation frame
+ * @param renderer
+ * @param scene
+ * @param camera
+ */
+function update(renderer, scene, camera) {
+    //call the render method using the scene and the camera
+    renderer.render(
+        scene,
+        camera
+    );
+
+    //we use the request animation frame function to keep updating about 60 times a second the page and allow animation
+    requestAnimationFrame(function(){
+        update(renderer, scene, camera);
+    });
 }
 
 //assign the scene object to a variable so we can see what's inside from the console
