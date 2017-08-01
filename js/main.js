@@ -1,5 +1,5 @@
 /**
- * Initialize the scene, the camera, the renderer
+ * Initialize the scene, the camera and the renderer
  */
 function init(){
     //initialize the scene
@@ -7,9 +7,17 @@ function init(){
 
     //get the box
     var box = getBox( 1, 1, 1);
+    //get the p;ane
+    var plane = getPlane(4, 4);
 
-    //add the mesh to the scene
+    //reposition the box from its bottom instead that from the center
+    box.position.y = box.geometry.parameters.height/2;
+    //rotate the plane to have it horizontal, webgl uses radiants instead of angles
+    plane.rotation.x = Math.PI/2; //this is the equivalent of 90 degrees
+
+    //add the mesh and the plane to the scene
     scene.add(box);
+    scene.add(plane);
 
     //initialize the camera
     var camera = new THREE.PerspectiveCamera(
@@ -61,6 +69,21 @@ function getBox(width, height, depth) {
         color: 0xffffff
     });
     //create the mesh
+    var mesh = new THREE.Mesh(
+        geometry,
+        material
+    );
+
+    return mesh;
+}
+
+function getPlane(width, depth){
+    var geometry = new THREE.PlaneGeometry(width, depth);
+    var material = new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        side: THREE.DoubleSide
+    });
+
     var mesh = new THREE.Mesh(
         geometry,
         material
