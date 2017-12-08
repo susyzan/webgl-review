@@ -5,14 +5,19 @@ function init(){
     //initialize the scene
     var scene = new THREE.Scene();
 
-    //set up the fog property to allow the scene to fade off to white
-    //the fog object takes two parameters, color and density of the fog
-    scene.fog = new THREE.FogExp2(0xffffff, 0.2);
+    var enableFog = false;
+    if (enableFog){
+        //set up the fog property to allow the scene to fade off to white
+        //the fog object takes two parameters, color and density of the fog
+        scene.fog = new THREE.FogExp2(0xffffff, 0.2);
+    }
 
     //get the box
     var box = getBox( 1, 1, 1);
     //get the p;ane
     var plane = getPlane(20, 20);
+    var pointLight = getPointLight(1);
+    var sphere = getSphere(0.05);
 
     //give a name to the plane so we can easily find it
     plane.name = 'plane-1';
@@ -21,10 +26,13 @@ function init(){
     box.position.y = box.geometry.parameters.height/2;
     //rotate the plane to have it horizontal, webgl uses radiants instead of angles
     plane.rotation.x = Math.PI/2; //this is the equivalent of 90 degrees
+    pointLight.position.y = 2;
 
     //add the mesh and the plane to the scene
     scene.add(box);
     scene.add(plane);
+    scene.add(pointLight);
+    pointLight.add(sphere);
 
     //initialize the camera
     var camera = new THREE.PerspectiveCamera(
@@ -50,7 +58,7 @@ function init(){
     //set the size of the renderer proportional to the window
     renderer.setSize(window.innerWidth, window.innerHeight);
     //set background color for the scene
-    renderer.setClearColor(0xffffff);
+    renderer.setClearColor('rgb(120, 120, 120)');
     //append the domElement for the renderer to the HTML
     document.getElementById('webgl').appendChild(renderer.domElement);
     //we call the function that does the renderings
@@ -72,8 +80,8 @@ function getBox(width, height, depth) {
     //initialize the geometry
     var geometry = new THREE.BoxGeometry(width, height, depth);
     //initiate the material, default is mesh (not affected by the light)
-    var material = new THREE.MeshBasicMaterial({
-        color: 0xf7786b
+    var material = new THREE.MeshPhongMaterial({
+        color: 'rgb(120, 120, 120)'
     });
     //create the mesh
     var mesh = new THREE.Mesh(
@@ -92,8 +100,8 @@ function getBox(width, height, depth) {
  */
 function getPlane(width, depth){
     var geometry = new THREE.PlaneGeometry(width, depth);
-    var material = new THREE.MeshBasicMaterial({
-        color: 0xf7cac9,
+    var material = new THREE.MeshPhongMaterial({
+        color: 'rgb(120, 120, 120)',
         side: THREE.DoubleSide
     });
 
@@ -102,6 +110,35 @@ function getPlane(width, depth){
         material
     );
 
+    return mesh;
+}
+
+/**
+ * Add a point light to illuminate the scene, since the phong material is not self illuminated, we need this
+ *
+ * @param intensity
+ * @returns {*}
+ */
+function getPointLight(intensity) {
+    var light = new THREE.PointLight(0xffffff, intensity);
+    return light;
+}
+
+
+/**
+ * Create a sphere that will be added as child element of the point of light so that it is easy to see what is position of the light
+ * @param size
+ * @returns {Raycaster.params.Mesh|*}
+ */
+function getSphere(size){
+    var geometry = new THREE.SphereGeometry(size, 24, 24);
+    var material = new THREE.MeshBasicMaterial({
+        color: 'rgb(255, 255, 255)'
+    });
+    var mesh = new THREE.Mesh(
+        geometry,
+        material
+    );
     return mesh;
 }
 
