@@ -67,6 +67,10 @@ function init(){
     renderer.setClearColor('rgb(120, 120, 120)');
     //append the domElement for the renderer to the HTML
     document.getElementById('webgl').appendChild(renderer.domElement);
+
+    var controls = new THREE.OrbitControls(camera, renderer.domElement);
+    update(renderer, scene, camera, controls);
+
     //we call the function that does the renderings
     update(renderer, scene, camera);
 
@@ -154,16 +158,18 @@ function getSphere(size){
  * @param scene
  * @param camera
  */
-function update(renderer, scene, camera) {
+function update(renderer, scene, camera, controls) {
     //call the render method using the scene and the camera
     renderer.render(
         scene,
         camera
     );
 
+    controls.update();
+
     //we use the request animation frame function to keep updating about 60 times a second the page and allow animation
     requestAnimationFrame(function(){
-        update(renderer, scene, camera);
+        update(renderer, scene, camera, controls);
     });
 }
 
