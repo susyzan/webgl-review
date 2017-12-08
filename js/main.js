@@ -4,6 +4,8 @@
 function init(){
     //initialize the scene
     var scene = new THREE.Scene();
+    //use dat.gui library to add user interface from where we edit the properties
+    var gui = new dat.GUI();
 
     var enableFog = false;
     if (enableFog){
@@ -27,6 +29,10 @@ function init(){
     //rotate the plane to have it horizontal, webgl uses radiants instead of angles
     plane.rotation.x = Math.PI/2; //this is the equivalent of 90 degrees
     pointLight.position.y = 2;
+    pointLight.intensity = 2;
+
+    gui.add(pointLight, 'intensity', 0, 10);
+    gui.add(pointLight.position, 'y', 0, 5);
 
     //add the mesh and the plane to the scene
     scene.add(box);
